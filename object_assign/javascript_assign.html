@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no" name="viewport" />
+	<title>객체 병합</title>
+</head>
+<body>
+
+<script>
+const obj1 = {
+    name : "홍길동",
+    age : 26,
+    nick : "Ggamus"
+};
+const obj2 = {
+    name : "까무잡잡",
+    age : 21,
+    list : {
+        check : true,
+        text : "기본객체"
+    }
+};
+const obj3 = {
+    list : {
+        check : false
+    }
+};
+const newObj = {...obj1, ...obj2};
+const newObj2 = {
+    ...newObj,
+    list : {
+        ...newObj.list,
+        ...obj3.list
+    }
+};
+document.write(JSON.stringify(obj1) + "<br />");
+document.write(JSON.stringify(obj2) + "<br />");
+document.write(JSON.stringify(obj3) + "<br />");
+document.write(JSON.stringify(newObj) + "<br />");
+document.write(JSON.stringify(newObj2));
+
+</script>
+</body>
+</html>
