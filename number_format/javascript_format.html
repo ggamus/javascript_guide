@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>숫자 콤마</title>
+</head>
+<body>
+
+숫자 콤마 찍기 : 
+<script type="text/javascript">
+// 숫자 콤마 찍기
+function numberFormat(str) {
+    let result = String(str); // 문자형으로 변환
+	result = result.replace(/[^\d]+/g, ''); // 문자가 포함될경우 삭제
+
+	return result.replace(/(\d)(?=(?:\d{3})+(?!\d))/g, '$1,');
+};
+/*
+실행방법 ----- numberFormat(50000)
+*/
+
+document.write(numberFormat(63352254));
+</script>
+</body>
+</html>
