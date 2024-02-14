@@ -14,7 +14,7 @@ function numberFormat(str) {
     let result = String(str); // 문자형으로 변환
 	result = result.replace(/[^\d]+/g, ''); // 문자가 포함될경우 삭제
 
-	return result.replace(/(\d)(?=(?:\d{3})+(?!\d))/g, '$1,');
+	return result.replace(/(\d)(?=(?:\d{3})+(?!\d))/g, '$1,'); // 최종값
 };
 /*
 실행방법 ----- numberFormat(50000)
